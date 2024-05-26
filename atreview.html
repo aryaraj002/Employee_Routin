@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charging History</title>
+    <style>
+        body {
+            /* background-image: url('download.jpg'); */
+  background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            background: #4CAF50;
+            display: flex;
+        }
+        li{
+            display: inline-block;
+            list-style: none;
+            margin-right: 10px;
+        }
+        li a{
+            display: block;
+            padding: 8px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+    <ul>
+        <li><a href="http://localhost//project/home.html">Home</a></li>
+        <li><a href="http://localhost//project/logout.php">Logout</a></li>
+        <li><a href="http://localhost//project/timesheet.html">Update Report</a></li>
+    </ul>
+</nav>
+
+    <h2>Attendance Report</h2>
+
+    <!-- Form for Searching Charging History -->
+    <form action="atreview.php" method="post" id="searchForm">
+        <label for="Eid">Enter Employee ID:</label>
+        <input type="text" id="Eid" name="Eid" required>
+        <input type="submit" value="View Attendance">
+    </form>
+
+</body>
+</html>
