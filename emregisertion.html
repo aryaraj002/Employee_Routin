@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title> Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="eregisertion.css">   
+</head>
+<style> ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    background: #4CAF50;
+    display: flex;
+}
+li{
+    display: inline-block;
+    list-style: none;
+    margin-right: 10px;
+}
+li a{
+    display: block;
+    padding: 8px;
+    color: white;
+}</style>
+<body>
+    <ul>
+        <li><a href="http://localhost//project/home.html">Home</a></li>
+    </ul>
+        <section>
+    <div class="regisertion-box">  
+        <div class="registertion-value">
+        <h2> Registration New Employee </h2>
+            <form action="eregisertion.php" method="post" onsubmit="return validatePhoneNumber();">
+                <h2>Contact details<br>------------------------------------------</h2>
+                <div class="inputbox">
+                    <label>Full Name:-</label>
+                 <input type="text" name="name" maxlength="32" id="name" placeholder="Enter your name" required/>
+                </div>
+                 <div class="inputbox">
+                 <label>Mobile No:-</label><br>
+                 <input type="text" name="phone" maxlength="10" id="phone" placeholder="Enter your phone number" required/><br>
+                </div>
+                <div class="inputbox">
+                    <label>E-mail:-</label>
+                 <input type="email" id="email" name="email" placeholder="Enter your email"required/>
+                </div>
+                <div class="inputbox">
+                    <label>Employee Id:-</label>
+                 <input type="text" id="Eid" name="Eid" placeholder="Enter your Employee Id"required/>
+                </div>
+        
+                 <h2>Authentication<br>------------------------------------------</h2>
+                 <div class="inputbox">
+                 <label>Username:-</label>
+                 <input type="text" id="username" name="username" placeholder="Enter your username"/><br>
+                </div>
+                <div class="inputbox">
+                 <label>Password:-</label>
+                 <input type="text" id="password" name="password" placeholder="Enter alteast 8 char"/><br>
+                </div>
+                 <button>Sign Up</button>
+                 <div class="login">
+                    <p>You have a account <a href="http://localhost//project/login.html"><u>Login</u></a></p>
+                </div>
+            </form>
+        </div>
+        </div>
+    </section>
+    <script>
+       function validateForm() {
+            if (!validatePhoneNumber() || !validateVehicleNumber()) {
+                return false;
+            }
+            return true;
+        }
+
+        function validatePhoneNumber() {
+            var phoneNumber = document.getElementById("phone").value;
+            // Define a regular expression for a valid 10-digit mobile number
+            var phoneNumberRegex = /^\d{10}$/;
+            
+            if (!phoneNumberRegex.test(phoneNumber)) {
+                alert("Please enter a valid 10-digit mobile number.");
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+    </body>
+</html>

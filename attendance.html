@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance System</title>
+  <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+    <section>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    
+    <div class="form-box">
+        <div class="form-value">
+    <form id="attendanceForm" action="attendance.php" method="post">
+        <h2>Attendance System</h2>
+      <div class="inputbox">
+        <label for="employeeId">Employee ID:</label>
+        <input type="text" id="employeeId" name="employeeId" required>
+      </div>
+      <div class="inputbox">
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" id="employeeName" name="employeeName" required>
+      </div>
+      <div class="inputbox">
+        <label for="currentDate">Date:</label>
+        <input type="date" id="currentDate" name="currentDate" required>
+      </div>
+      <div class="inputbox">
+        <label for="currentTime">Time:</label>
+        <input type="time" id="currentTime" name="currentTime" required>
+      </div>
+      <button type="submit">Submit Attendance</button>
+    </form>
+  </div>
+  </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get current date and time
+      const currentDate = new Date().toISOString().slice(0, 10);
+      const currentTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+
+      // Fill date and time fields in the form
+      document.getElementById('currentDate').value = currentDate;
+      document.getElementById('currentTime').value = currentTime;
+    });
+
+    // document.getElementById('attendanceForm').addEventListener('submit', function(event) {
+    //   event.preventDefault();
+
+    //   // Get form values
+    //   const employeeId = document.getElementById('employeeId').value;
+    //   const employeeName = document.getElementById('employeeName').value;
+    //   const currentDate = document.getElementById('currentDate').value;
+    //   const currentTime = document.getElementById('currentTime').value;
+
+    //   // Convert time string to minutes
+    //   const timeParts = currentTime.split(':');
+    //   const totalMinutes = parseInt(timeParts[0]) * 60 + parseInt(timeParts[1]);
+
+    //   let status;
+    //   if (totalMinutes >= 525 && totalMinutes <= 570) { // 8:45 to 9:30
+    //     status = 'Present';
+    //   } else if (totalMinutes > 570 && totalMinutes <= 780) { // 9:30 to 13:00
+    //     status = 'Half Day';
+    //   } else {
+    //     status = 'Absent';
+    //   }
+
+    //   // Output attendance details
+    //   alert(`Employee ID: ${employeeId}\nEmployee Name: ${employeeName}\nDate: ${currentDate}\nTime: ${currentTime}\nStatus: ${status}`);
+    // });
+  </script>
+</body>
+</html>

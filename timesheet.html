@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timesheet</title>
+    <link rel="stylesheet" href="timesheet.css">
+</head>
+<style>
+    ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            background: #4CAF50;
+            display: flex;
+        }
+        li{
+            display: inline-block;
+            list-style: none;
+            margin-right: 10px;
+        }
+        li a{
+            display: block;
+            padding: 8px;
+            color: white;
+        }
+</style>
+<body>
+    <nav>
+        <ul>
+            <li><a href="http://localhost//project/home.html">Home</a></li>
+            <li><a href="http://localhost//project/atreview.html">Attendance</a></li>
+            <li><a href="http://localhost//project/logout.php">Logout</a></li>
+        </ul>
+    </nav>
+    <form action="timesheet.php" method="post">
+    <div class="container">
+        <h1>Weekly Timesheet</h1>
+        <label>Enter Employee Id</label>
+        <input type='text' name='emid'>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Date</th>
+                <th>Marketing Work</th>
+                <th>Sales Work</th>
+                <th>Target Report</th>
+                <th>Remarks</th>
+            </tr>
+            <tr>
+                <td><select id="day" name="day"required>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thrusday">Thrusday</option>
+                    <option value="Friday">Friday</option>
+                 </select></td>
+                <td><input type='datetime-local' name='date' required></td>
+                <td><input type='text' name='marketing' required></td>
+                <td><input type='text' name='sales'></td>
+                <td><input type='text' name='target'></td>
+                <td><input type='text' name='remarks'></td>
+            </tr>
+        </table>
+        <button type="submit">Submit Timesheet</button>
+        <p>View Daily Report <a href="http://localhost//project/report.html"><u>Report</u></a></p>
+    </div>
+    </div>
+    </form>
+</body>
+</html>

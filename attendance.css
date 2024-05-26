@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(57, 108, 179);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+nav{
+    width: 100%;
+    background: #333;
+    padding: 10px 10%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000;
+  }
+    nav ul{
+    width:100%;
+    text-align: left;
+  }
+  nav ul li{
+    display:inline-block;
+    list-style: none;
+    margin-right: 10px;
+  }
+  nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+.form-box {
+    position: relative;
+    width: 400px;
+    height: auto;
+    background: rgba(255, 192, 203, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Adjusted to stack elements vertically */
+    align-items: center; /* Centering all elements horizontally */
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inputbox {
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.inputbox label {
+    color: #fff;
+    font-size: 1em;
+    padding: 5px 10px;
+    border-radius: 0px;
+    transition: top 0.3s ease;
+}
+
+.inputbox input {
+    width: calc(100% - 20px);
+    height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 5px;
+    color: #000; /* Changed text color to improve visibility */
+    border-radius: 5px;
+    border: 2px solid #fff;
+}
+
+/* Adjust label position when input is focused or has content */
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label {
+    top: -20px; /* Moved label up for better separation */
+    background-color: lightpink; /* Adjusted background color for better contrast */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc;
+}

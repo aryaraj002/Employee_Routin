@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewpoint" content=""wigth=device-width, initial-scale="1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="home">
+        <nav>
+            <ul>
+                <li><a href="http://localhost//project/home.html">Home</a></li>
+                <li><a href="http://localhost//project/login.html">Login</a></li>
+                <li><a href="http://localhost//project/emregisertion.html">Register</a></li>
+            </ul>   
+            <div class="dropdown">
+                <img src="WhatsApp Image 2024-04-30 at 11.11.10.jpeg" class="user-pic" onclick="toggleMenu()">
+                <div class="dropdown-content" id="subMenu">
+                    <a href="http://localhost//project/notice.php">Notice</a>
+                    <a href="http://localhost//project/calandernew.html">Calendar</a>
+                    <a href="http://localhost//project/attendance.html">Mark Attendance</a>
+                    <a href="">Contact Us</a>
+                    <a href="">About Us</a>
+                </div>
+            </div>
+        </nav>
+        <h1>Efficiency Begins Here: Manage Your Project Time Effectively</h1>
+    </div>
+<script>
+    let subMenu = document.getElementById("subMenu");
+    function toggleMenu(){
+        subMenu.classList.toggle("open-menu");
+    }
+</script>
+<script>
+    // Fetch user information from the server
+    async function fetchUserInfo() {
+        try {
+            const response = await fetch('login.php'); // Replace with your actual server-side script
+            const userData = await response.json();
+
+            // Update the user's name in the HTML
+            const userNameElement = document.getElementById('userName');
+            userNameElement.textContent = userData.name;
+        } catch (error) {
+            console.error('Error fetching user information:', error);
+        }
+    }
+    window.addEventListener('load', fetchUserInfo);
+</script>
+</body>
+</html>
